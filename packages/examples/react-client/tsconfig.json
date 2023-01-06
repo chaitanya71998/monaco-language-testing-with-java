@@ -1,0 +1,27 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "declarationDir": "dist",
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+  },
+  "types": [
+    "react/next",
+    "react-dom/next"
+  ],
+  "references": [{
+    "path": "../../client"
+  },
+  {
+    "path": "../../vscode-ws-jsonrpc"
+  }],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

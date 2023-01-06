@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+
+node_modules
+lib
+dist
+
+*.tsbuildinfo
+packages/examples/server/jspServer/*
+

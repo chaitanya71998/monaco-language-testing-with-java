@@ -1,0 +1,66 @@
+{
+  "name": "monaco-languageclient",
+  "version": "4.0.3",
+  "description": "Monaco Language client implementation",
+  "author": {
+    "name": "TypeFox GmbH ",
+    "url": "http://www.typefox.io"
+  },
+  "homepage": "https://github.com/TypeFox/monaco-languageclient/blob/main/packages/client/README.md",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TypeFox/monaco-languageclient",
+    "directory": "packages/client"
+  },
+  "bugs": {
+    "url": "https://github.com/TypeFox/monaco-languageclient/issues"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "lib/index"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=16.11.0",
+    "npm": ">=8.0.0"
+  },
+  "volta": {
+    "node": "16.18.1",
+    "npm": "8.19.3"
+  },
+  "files": [
+    "lib",
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "License.txt"
+  ],
+  "dependencies": {
+    "vscode": "npm:@codingame/monaco-vscode-api@1.69.13",
+    "vscode-jsonrpc": "8.0.2",
+    "vscode-languageclient": "8.0.2"
+  },
+  "peerDependencies": {
+    "vscode": ">= npm:@codingame/monaco-vscode-api@1.69.0 < npm:@codingame/monaco-vscode-api@1.70.0"
+  },
+  "scripts": {
+    "clean": "npx shx rm -fr lib dist tsconfig.tsbuildinfo",
+    "lint": "eslint src --ext .ts",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "build:msg": "echo Building monaco-languageclient:",
+    "build": "npm run build:msg && npm run clean && npm run compile"
+  }
+}

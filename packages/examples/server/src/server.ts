@@ -8,7 +8,7 @@ import { fileURLToPath, URL } from "url";
 import * as net from "net";
 import express from "express";
 import * as rpc from "vscode-ws-jsonrpc";
-import { launch } from "./json-server-launcher.js";
+import { launch } from "./java-server-launcher.js";
 
 // solve: __dirname is not defined in ES module scope
 import path from "path";

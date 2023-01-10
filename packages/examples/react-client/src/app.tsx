@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import * as monaco from "monaco-editor";
 import Editor, { loader } from "@monaco-editor/react";
+
 import "monaco-editor/esm/vs/editor/editor.all.js";
 
 import "monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js";
@@ -39,7 +40,6 @@ export function createUrl(
     return normalizeUrl(`${protocol}://${hostname}:${port}${path}`);
 }
 
-
 function createLanguageClient(transports: any) {
     return new MonacoLanguageClient({
         name: "Java Language Client",
@@ -65,7 +65,7 @@ function createWebSocket(url: string) {
     const webSocket = new WebSocket(url);
     webSocket.onopen = () => {
         const socket = toSocket(webSocket);
-        const reader = new WebSocketMessageReader(socket);
+        const reader = new WebSocketMessageReader(socket)
         const writer = new WebSocketMessageWriter(socket);
         const languageClient = createLanguageClient({
             reader,
@@ -76,7 +76,11 @@ function createWebSocket(url: string) {
     };
 }
 
-const MonacoEditor = (props) => {
+interface Props {
+    filePath:string
+}
+
+const MonacoEditor = ({filePath}:Props) => {
     const hostname = "localhost";
     const urlPath = "";
     const port = "4000";
@@ -101,10 +105,14 @@ const MonacoEditor = (props) => {
             enabled: true,
         },
     };
+
+    //update file path you file editor
     return (
         <Editor
-            path ={'/src/HelloWorld.java'}
-            height='50vh'
+            path={
+              filePath
+            }
+            height="50vh"
             value={code}
             onChange={(newCode) => {
                 if (newCode) {

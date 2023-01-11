@@ -4,6 +4,7 @@ Set up steps:
 
 ```
 // use node version 16.11.0 or above, recommended 16.13.0
+// recommended to have java version 11 to make the java language server to work
 npm i
 npm run build:client
 

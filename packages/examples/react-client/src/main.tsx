@@ -10,5 +10,5 @@ const defaultCode = `public class HelloWorld {\n\tpublic static void main(String
 
 const root = ReactDOM.createRoot(document.getElementById("root")!)
 root.render(
-  <ReactMonacoEditor filePath="file:///home/chaitanya/Documents/clonning_folders/testing-java-langauge-client/monaco-language-testing-with-java/packages/examples/react-client/src/HelloWorld.java" />
+  <ReactMonacoEditor filePath="file:///app/java-spring-boot-initial-code/src/main/java/com/jetbrains/marco/photoz/clone/PhotozCloneApplication.java" />
 )

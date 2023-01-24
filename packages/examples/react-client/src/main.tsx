@@ -9,6 +9,7 @@ import ReactMonacoEditor from "./app.js"
 const defaultCode = `public class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello, World!");\n\t}\n}`
 
 const root = ReactDOM.createRoot(document.getElementById("root")!)
+// filepath should be server system file path
 root.render(
-  <ReactMonacoEditor filePath="file:///app/java-spring-boot-initial-code/src/main/java/com/jetbrains/marco/photoz/clone/PhotozCloneApplication.java" />
+  <ReactMonacoEditor filePath="file:///home/chaitanya/Documents/clonning_folders/testing-java-langauge-client/monaco-language-testing-with-java/packages/examples/react-client/src/HelloWorld.java" />
 )
